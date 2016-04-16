@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100%;
+}
+.header{
+    width: 1348px;
+    height: 64px;
+    position: relative;
+}
+.headerLogo{
+    position: absolute;
+    top: 20px;
+    left: 222px;
+}
+.headerInto{
+    position: absolute;
+    top: 24px;
+    left: 382px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    color: #717171;
+    font-weight: bold;
+
+}
+.headerNav {
+    position: absolute;
+    right: 100px;
+    top: 25px;
+    text-align: right;
+
+}
+.headerNav  a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #959595;
+    padding-left:5px;
+}
+.headerNav  a:hover{
+    color: #333333;
+}
+.bodying{
+    height: 600px;
+    background: #fff;
+    position: relative;
+    min-width: 1348px;
+    background-color: rgb(150, 37, 30);
+}
+.bodying-img{
+    width: 100%;
+    height: 600px;
+    position: relative;
+    clear: both;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-image: url("http://mimg.127.net/m/lc/img/LoginBackgroundPic/753/0/promPic.jpg");
+}
+.bodying-tab{
+    width: 298px;
+    height: 462px;
+    background-color: snow;
+    border: 1px solid #e7e7e5;
+    border-radius: 10px;
+    position: absolute;
+    right: 274px;
+    top: 70px;
+}
+.bodying-tab h3{
+    padding-top: 10px;
+    padding-left: 20px;
+    color: #626262;
+}
+.tab-txt input{
+    width:245px;
+    height: 41px; ;
+    border-radius: 5px;
+    border: 1px solid #959595;
+    font-size: 14px;
+    margin-left: 26px;
+    padding-left: 10px;
+    margin-top: 21px;
+}
+.tab-pwd input{
+    width:245px;
+    height: 41px; ;
+    border-radius: 5px;
+    border: 1px solid #959595;
+    font-size: 14px;
+    margin-left: 26px;
+    padding-left: 10px;
+    margin-top: 21px;
+}
+.tab-cbx{
+   margin-top: 22px;
+   margin-left: 26px;
+    float: left;
+
+
+}
+.tab-cbx input{
+    width: 15px;
+    height: 15px;
+    padding: 0;
+    overflow: hidden;
+    margin: 0;
+    vertical-align: middle;
+}
+.tab-cbx label{
+
+    font-size: 14px;
+   color: #848585;
+    padding-top: 20px;
+    vertical-align: middle;
+}
+.tab-wj{
+    float: right;
+    margin-top: 22px;
+    margin-right: 22px;
+
+}
+.tab-wj a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #848585;
+}
+.tab-wj a:hover{
+    color: #333333;
+}
+.tab-btn{
+    margin-top: 55px;
+    margin-left: 26px; ;
+}
+.tab-btn .sub{
+    width: 110px;
+    height: 40px;
+    border: 1px #185aa5 solid;
+    border-radius: 3px;
+    font-family: Î¢ÈíÑÅºÚ;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fffffa;
+    background: #3d8de2;
+    cursor: pointer;
+}
+.sub:hover{
+    background: #2f85dc;
+}
+.tab-btn .bon{
+    width: 110px;
+    height: 40px;
+   margin-left: 25px;
+    border: 1px #afbfcf solid;
+    border-radius: 3px;
+    text-decoration: none;
+    font-family: Î¢ÈíÑÅºÚ;
+    font-size: 16px;
+    font-weight: bold;
+    background: #ebf3fa;
+    cursor: pointer;
+
+}
+.bon-zhuce{
+    display: block;
+}
+.bon-zhuce:hover{
+    color: #333333;
+}
+
+.bon a{
+    text-decoration: none;
+    color: #6d798c;
+}
+.mailApp{
+    margin-top: 67px;
+    margin-left: 26px;
+    display: block;
+    width: 256px;
+    height: 35px;
+    background: url('http://mimg.127.net/index/lib/img/mailapp_logo_141212.png') no-repeat;
+    cursor: pointer;
+}
+.tab-lb{
+    margin-top: 41px;
+    margin-left: 26px;
+}
+.tab-lb ul{
+    list-style: none;
+}
+.tab-lb a{
+    line-height:25px;
+    text-decoration: none;
+    color: #9bacc6;
+
+}
+.tab-lb a:hover{
+    color:#3d8de2 ;
+}
+.footing{
+    height: 65px;
+}
+.footing-cent{
+    width: 1348px;
+    height: 63px;
+    overflow: visible;
+    margin: 0 auto;
+    color: #848585;
+    position: relative;
+}
+.footing-Logo{
+    position: absolute;
+    top:16px;
+    left:221px;
+}
+.footing-kx{
+    position: absolute;
+    top: 27px;
+    right: 218px;
+}
+.footing-Nav{
+    position: absolute;
+    top: 29px;
+    right: 350px;
+}
+.footing-Nav a{
+    text-decoration: none;
+    color: #959595;
+    margin-left:24px;
+    font-size: 14px;
+
+}
+.footing-Nav a:hover{
+    color:#333333 ;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular/angular.js"></script>
+    <script>
+        var ange= angular.module('equalsdemo',[]);
+        ange.controller('equalscon',['$scope',function($scope){
+            $scope.but1="angular.equals('a','a')";
+            $scope.but2="angular.equals(obj1,obj2)";
+            $scope.but3="1==true";
+            $scope.but4="angular.equals(1,true)";
+            $scope.button1=function(){
+                alert(angular.equals('a','a'));
+            };
+            var obj1={name:'tom',password:'123456'};
+            var obj2={name:'tom',password:'123456'};
+            $scope.button2=function(){
+                alert(angular.equals(obj1,obj2));
+            };
+            $scope.button3=function(){
+                alert(1==true);
+            };
+            $scope.button4=function(){
+                alert(angular.equals(1,true));
+            };
+        }]);
+    </script>
+</head>
+<body ng-app="equalsdemo">
+<div ng-controller="equalscon">
+    <div id="test"></div>
+    <div>
+        {{but1}}
+        <input type="button" ng-click="button1()" value="比较值" />
+    </div>
+    <br/>
+    <div>
+        {{but3}}<input type="button" ng-click="button3()" value="=="><br/>
+        {{but4}}<input type="button" ng-click="button4()" value="angular.equals">
+        <div>
+            <br/>
+            <div>
+                <label>
+                    var obj1 = {name:"tom", password:"123456"};<br />
+                    var obj2 = {name:"tom", password:"123456"};
+                </label><br/>
+                {{but2}}
+                <input type="button" ng-click="button2()" value="比较对象">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

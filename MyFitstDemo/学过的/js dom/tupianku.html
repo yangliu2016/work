@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            background: #ccc;
+            margin: 1em 10%;
+        }
+        h1{
+            color: #333;
+            background: transparent;
+        }
+        a{
+              color: #c60;
+              background: transparent;
+              font-weight: bold;
+              text-decoration: none;
+          }
+        ul{
+            padding: 0;
+        }
+        li {
+            float: left;
+            padding: 1em;
+            list-style: none;
+
+        }
+        #imagegalley{
+            list-style: none;
+        }
+        #imagegalley li{
+            display: inline;;
+        }
+        #imagegalley li a img{
+            border: 0;
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+<h1>JS图片库</h1>
+<ul id="imagegalley">
+    <li><a href="images/1.jpg" title="小狗玩球" onclick="showPic(this);return false"><img src="images/1.jpg"></a></li>
+    <li><a href="images/2.jpg" title="萌萌哒" onclick="showPic(this);return false"><img src="images/2.jpg" ></a></li>
+    <li><a href="images/3.jpg" title="看我干什么" onclick="showPic(this);return false"><img src="images/3.jpg" ></a></li>
+    <li><a href="images/4.jpg" title="主人你在干什么" onclick="showPic(this);return false"><img src="images/4.jpg" ></a></li>
+    <li><a href="images/5.jpg" title="三兄弟睡大觉" onclick="showPic(this);return false"><img src="images/5.jpg" ></a></li>
+    <li><a href="images/6.jpg" title="我可爱吗？" onclick="showPic(this);return false"><img src="images/6.jpg" ></a></li>
+</ul>
+<img id="placeholder" src="images/7.jpg" alt="my image gallery">
+<p id="description">Choose an image</p>
+</body>
+<script>
+    function prepareGalley(){
+        if(!document.getElementsByTagName)return false;
+        if(!document.getElementById) return false;
+        if(!document.getElementById("imagegalley")) return false;
+        var gallery = document.getElementById("imagegalley");
+        var links =  gallery.getElementsByTagName('a');
+        for(var i=0;i<links.length;i++){
+            links[i].onclick=function(){
+                return showPic(this)? false:true;
+            }
+        }
+    }
+    function showPic(whichpic){
+        if(!document.getElementById("placeholder"))return false;
+        var source = whichpic.getAttribute('href');
+        var placeholder = document.getElementById("placeholder");
+        if(placeholder.nodeName !="IMG") return false;
+        placeholder.setAttribute('src',source);
+        if(document.getElementById("description")){
+            var text = whichpic.getAttribute('title')?whichpic.getAttribute('title'):"";
+            var description = document.getElementById("description");
+            if(description.firstChild.nodeType == 3){
+                description.firstChild.nodeValue =text;
+            }
+        }
+        return true;
+    }
+</script>
+</html>

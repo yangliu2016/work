@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="namesCtrl">
+    <p>过滤输入</p>
+    <p><input type="text" ng-model="test"></p>
+    <ul>
+        <li ng-repeat=" x in names | filter:test | orderBy:'country'" style="list-style: none">
+            <p ng-bind="( x.name | uppercase ) +','+ x.country"></p>
+        </li>
+
+    </ul>
+    <h1 ng-bind="myHeader"></h1>
+    <h2 ng-bind="theTime"></h2>
+</div>
+<script src="angular/angular.js"></script>
+<script>
+    angular.module('myApp', []).controller('namesCtrl', function($scope ,$timeout,$interval) {
+        $scope.names = [
+            {name:'Jani',country:'Norway'},
+            {name:'Hege',country:'Sweden'},
+            {name:'Kai',country:'Denmark'}
+        ];
+        $scope.myHeader='hello world';
+        $timeout(function(){
+            $scope.myHeader='how are you today';
+        },2000);
+        $scope.theTime = new Date().toLocaleTimeString();
+        $interval(function () {
+            $scope.theTime = new Date().toLocaleTimeString();
+        }, 1000);
+    });
+</script>
+</body>
+</html>

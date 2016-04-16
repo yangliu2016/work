@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background: #1dba9d;
+            display: none;
+        }
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("#div1").slideDown(5000);
+            });
+            $("#btn2").click(function(){
+                $("#div1").stop();
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="btn1">滑动打开</button>
+<button id="btn2">停止</button>
+<div id="div1"></div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function strNum()
+        {
+            //获取输入文本框中的值，这里获取的值是一个字符串
+            var s = document.getElementById("num").value;
+            var s1="";
+            for(var i=0;i<4;i++)
+            {
+                //如果获取的不是最后一个字符
+                if(i!=3)
+                {
+                    s1+=s.charAt(i)+ " ";
+                }
+                //如果获取的是最后一个字符
+                else
+                {
+                    s1+=s.charAt(i);
+                }
+            }
+            alert(s1);
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="num">
+<input type="button" onclick="strNum()" value="提交"/>
+</body>
+</html>

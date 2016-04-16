@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+
+    </title>
+</head>
+<body ng-app="myApp">
+<div ng-controller="DeathrayMenuController">
+    <button ng-click="toggleMenu()">Toggle Menu</button>
+    <ul ng-show="menuState.show">
+        <li ng-click="stun()">Stun</li>
+        <li ng-click="disintegrate()">Disintegrate</li>
+        <li ng-click="erace()">Erase from history</li>
+
+    </ul>
+</div>
+<script src="angular/angular.js"></script>
+<script>
+    angular.module('myApp',[]).controller('DeathrayMenuController',function($scope){
+        $scope.menuState.show=false;
+        $scope.toggleMenu=function(){
+            $scope.menuState.show=!$scope.menuState.show;
+        }
+    })
+</script>
+</body>
+</html>

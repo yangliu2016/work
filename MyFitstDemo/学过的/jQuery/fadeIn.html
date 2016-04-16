@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #d1{
+            width: 100px;
+            height: 100px;
+            background: #1dba9d;
+            display: none;
+        }
+        #d2{
+            width: 100px;
+            height: 100px;
+            background: red;
+            display: none;
+        }
+        #d3{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            display: none;
+        }
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function(){
+                $("#d1").fadeIn();
+                $("#d2").fadeIn("slow");
+                $("#d3").fadeIn(3000);
+
+            });
+        });
+    </script>
+</head>
+<body>
+<p>演示带不同参数的fadeIn()方法</p>
+<button>三个div的淡入</button>
+<br><br>
+<div id="d1"></div>
+<br/>
+<div id="d2"></div>
+<br/>
+<div id="d3"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!--<!DOCTYPE html>-->
+<html ng-app="hello">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="angular/angular.js"></script>
+    <script>
+
+        angular.module('hello',[]).controller('HelloController', function ($scope,$location) {
+            $scope.greeting={text:'Hello'};
+        });
+
+    </script>
+
+</head>
+<body >
+<div ng-controller='HelloController'>
+    <input type="text" ng-model="greeting.text"/>
+    <p>{{greeting.text}}</p>
+
+
+</div>
+</body>
+</html>

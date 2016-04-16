@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="angular/angular.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body ng-controller="myController">
+<h2>表单</h2>
+<table>
+    <tr>
+        <th>name</th>
+        <th>phone</th>
+        <th></th>
+    </tr>
+    <tr ng-repeat="employee in employees">
+        <td>
+            <input type="text" id="txt_name_{{employee.id}}" class="inactive" ng-model="employee.name" readonly>
+        </td>
+        <td>
+            <input type="text" ng-model="employee.phone" class="inactive" readonly>
+        </td>
+        <td>
+            <edit ng-model="employee" ng-show="showEdit"><a>Edit</a></edit>
+            <update ng-model="employee" ng-show="!showEdit"><a>Update</a></update>
+            <cancel ng-model="employee" ng-show="!showEdit"><a>Cancel</a></cancel>
+            <delete ng-model="employee" ng-show="showEdit"><a>Delete</a></delete>
+        </td>
+    </tr>
+</table>
+</body>
+<script>
+   var app =  angular.module('myApp',[]);
+   app.controller('myController',function($scope){
+        $scope.name='World';
+        $scope.employees=[
+           {id:101,name:'ly',phone:'123456'},
+           {id:102,name:'xm',phone:'234567'},
+           {id:103,name:'Ly',phone:'345678'},
+           {id:104,name:'tf',phone:'456789'}
+       ];
+        $scope.showEdit=true;
+        $scope.master={};
+    });
+   app.directive('edit',function(){
+       return{
+           restrict:'AE',
+           require:'ngModel',
+           link:function(scope,element,attrs,ngModel){
+               element.bind('click',function(){
+                   var id ="txt_name_"+ngModel.$modelValue.id;
+                   scope.$apply(function(){
+                       angular.copy(ngModel.$modelValue,scope.master);
+                   });
+                   var obj=$("#"+id);
+                   obj.removeClass('inactive');
+                   obj.addClass('active');
+                   obj.removeAttr('readOnly');
+                   scope.$apply(function(){
+                       scope.showEdit = false;
+                   })
+               });
+           }
+       }
+   });
+   app.directive("update",function(){
+       return{
+           restrict: 'AE',
+           require: 'ngModel',
+           link: function(scope,element,attrs,ngModel){
+               element.bind("click",function(){
+                   alert(ngModel.$modelValue + " is updated, Update your value here.");
+                   var id = "txt_name_" +ngModel.$modelValue.id;
+                   var obj = $("#"+id);
+                   obj.removeClass("active");
+                   obj.addClass("inactive");
+                   obj.attr("readOnly",true);
+                   scope.$apply(function(){
+                       scope.showEdit = true;
+                   })
+               })
+           }
+       }
+   });
+   app.directive("cancel",function(){
+       return{
+           restrict: 'AE',
+           require: 'ngModel',
+           link: function(scope,element,attrs,ngModel){
+               element.bind("click",function(){
+                   scope.$apply(function(){
+                       angular.copy(scope.master,ngModel.$modelValue);
+                       //console.log(ngModel.$modelValue);
+                   });
+
+                   var id = "txt_name_" +ngModel.$modelValue.id;
+                   var obj = $("#"+id);
+                   obj.removeClass("active");
+                   obj.addClass("inactive");
+                   obj.prop("readOnly",true);
+                   scope.$apply(function(){
+                       scope.showEdit = true;
+                   })
+               })
+           }
+       }
+   });
+
+   app.directive('delete',function(){
+        return{
+            restrict:'AE',
+            require:'ngModel',
+            link:function(scope, element, attrs,ngModel){
+                element.bind('click',function(){
+                    var id= ngModel.$modelValue.id;
+                    alert('delete item where employee id:='+id);
+                    scope.$apply(function(){
+                        for(var i=0;i<scope.employees.length;i++){
+                            if(scope.employees[i].id==id){
+                                console.log(scope.employees[i]);
+                                scope.employees.splice(i,1);
+                            }
+                        }
+                        console.log(scope.employees);
+                    })
+                })
+            }
+        }
+    });
+</script>
+</html>

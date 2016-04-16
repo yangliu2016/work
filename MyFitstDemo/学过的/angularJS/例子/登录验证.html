@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form ng-controller="AddUserController">
+    <input type="text" ng-model="us" required autofocus='autofocus'>
+    <input type="password" ng-model="pd" required>
+    <button type="submit" ng-click="addUser()">登录</button>
+    <button>注册</button>
+</form>
+</body>
+<script src="angular/angular.js"></script>
+<script>
+    angular.module('myApp',[]).controller('AddUserController',function($scope){
+        var name =false;
+        var pwd = false;
+        function valid(){
+            var x =[
+                {userName:'admin',passWord:'admin123'},
+                {userName:'liu',passWord:'liu123'}
+            ];
+            for(var i =0; i< x.length;i++){
+                if($scope.us == x[i].userName){
+                    name =true;
+                    if($scope.pd == x[i].passWord){
+                        pwd = true;
+                    }
+                    else{
+                        pwd =false;
+                    }
+                    break;
+                }
+                else{
+                    name= false
+                }
+            }
+        }
+
+        $scope.addUser =function(){
+            if(!$scope.us){
+                return;
+            }
+            else if(!$scope.pd){
+                return;
+            }
+
+            var band = valid;
+            band();
+
+            if(name ==true && pwd == true){
+                alert('登陆成功');
+            }
+            else if(name ==false){
+                alert('账号错误');
+            }
+            else if(pwd == false){
+                alert('密码错误');
+            }
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Sign up</h1>
+<form name='addUserForm' ng-controller="AddUserController">
+    <div ng-show="message">
+        {{message}}
+    </div>
+    <div>
+        Fist name:
+        <input name="firstName" ng-model="user.first" required>
+    </div>
+    <div>
+        Last name:
+        <input ng-model="user.last" required>
+    </div>
+    <div>
+        Email:
+        <input type="email" ng-model="user.email" required>
+    </div>
+    <div>
+        Age:
+        <input type="number" ng-model="user.age" ng-maxlength="3" ng-minlength="1">
+    </div>
+    <div>
+        <button ng-click="addUser()" >Submit</button>
+    </div>
+</form>
+</body>
+<script src="angular/angular.js"></script>
+<script>
+    var myApp = angular.module('myApp',[]);
+    myApp.controller('AddUserController',function($scope){
+        $scope.message='';
+        $scope.addUser=function(){
+            $scope.message='dad'
+        }
+    })
+</script>
+</html>

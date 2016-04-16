@@ -1,0 +1,124 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+body{
+    background: cornsilk;
+}
+.wrapper{
+    width: 80%;
+    height:1000px;
+    background: #666666;
+    margin: 0 auto;
+}
+.heading{
+    width:100%;
+    height: 90px;
+    background: cornsilk;
+}
+.heading_nav{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    width: 100%;height: 30px;
+    position: relative;
+}
+.heading_title {
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: brown;
+    float: left;
+    text-shadow: 4px 4px 6px;
+    transform: rotate(9deg);
+}
+
+ul{margin-left:40px;
+    float:left;
+    list-style:none;
+    padding-top:6px;
+    padding-bottom:6px;
+}
+li{
+    float: left;
+    padding-left:10px;
+
+}
+
+a:link,a:visited{
+    font-weight:bold;
+    padding:6px;
+    text-align:center;
+    color: darkolivegreen;
+    text-decoration:none;
+    text-shadow: 4px 4px 6px;
+
+
+}
+a:hover,a:active{
+    color: coral;
+
+
+}
+.heading_navbar li{
+    -transiti-webkiton:width 2s, height 2s, -webkit-transform 2s;
+}
+.heading_navbar li:hover{
+    -webkit-transform: rotate(40deg);
+}
+.heading_img img{
+    float:right;
+    border-radius: 30px;
+    box-shadow:0 1px 1px rgba(0,0,0,0.2);
+    display:inline;
+    width:26px;
+    height:26px;
+}
+.heading_soptlight form{
+    float:right;
+    margin-right:80px;
+    width:100px;
+    height:26px;
+    position: relative;
+}
+.heading_soptlight input{
+    border-radius:30px;
+    height:26px;
+}
+.body{
+    padding:30px;
+    width:auto;
+    height: auto;
+}
+.body_title h3{
+    width: 280px;
+    font-size:30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #FF6600;
+    text-shadow: 4px 4px 6px;
+    position:relative;
+    animation: run 5s linear infinite alternate;
+}
+@-webkit-keyframes run {
+    from{left: 0px;
+        top: 0px;}
+    to{
+        left: 800px;
+        top: 0px;
+    }
+
+}
+.body_title p{
+    margin-bottom: 20px;
+    margin-top:60px;
+    margin-left: 20px;
+    color: #FF0000;
+    font-size:18px;
+    line-height: 40px;
+    text-shadow:4px 4px 6px ;
+    transform: rotate(5deg);
+}
+.footing{
+    font-size: 12px;
+    text-align: center;
+    padding-top:20px;
+    color: deepskyblue;
+}

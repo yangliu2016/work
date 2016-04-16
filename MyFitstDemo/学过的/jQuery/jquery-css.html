@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .ime{
+            font-size: 30px;
+            color: red;
+        }
+        .emc{
+            background: #17be9b;
+            width: 200px;
+            height: 200px;
+        }
+        .mm{
+            font-size: 16px;
+            color: blue;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $("h3,p").addClass("ime emc");
+                $("div").addClass("emc");
+               $("h3").removeClass("mm");
+            });
+        });
+    </script>
+</head>
+<body>
+<button>点击改变CSS</button>
+<h3 class="mm">这是标题</h3>
+<p>这是一个段落</p>
+<p>这是一个段落</p>
+<div>
+    这什么一个div 块级标签
+</div>
+</body>
+</html>

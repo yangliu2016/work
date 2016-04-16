@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>营养专题</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            background: cornsilk;
+        }
+        .header{
+        }
+        .header h2{
+            text-shadow: 4px 4px 6px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: brown;
+            margin-top: 20px;
+            margin-left: 40px;
+        }
+        .header p{
+            padding-top: 20px;
+           padding-left: 60px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #a94442;
+            text-shadow: 2px 2px 4px;
+        }
+        .header img{
+            display: block;
+            margin: 20px auto 0;
+            box-shadow: 4px 4px 6px;
+        }
+        .content-ctr{
+            margin-top: 40px;
+
+        }
+        .ctr-left{
+            float:left;
+            margin-left: 140px;
+
+        }
+        .ctr-left p{
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px;
+            color: darkolivegreen;
+            padding-left: 40px;
+        }
+        .ctr-left img{
+            width: 300px;
+            height: 300px;
+            padding-left: 40px;
+            padding-top: 20px;
+            transition:width 2s, height 2s;
+            -moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+            -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+            -o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+        }
+        .ctr-left img:hover{
+            width: 600px;
+            height: 300px;
+            transform:rotate(360deg);
+            -moz-transform:rotate(360deg); /* Firefox 4 */
+            -webkit-transform:rotate(360deg); /* Safari and Chrome */
+            -o-transform:rotate(360deg); /* Opera */
+
+        }
+        .ctr-right{
+            float: right;
+            margin-right: 140px;
+
+        }
+        .ctr-right p{
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px;
+            color: darkolivegreen;
+
+        }
+        .ctr-right img{
+            width: 300px;
+            height: 300px;
+            padding-top: 20px;
+            padding-right: 40px ;
+            transition:width 2s, height 2s;
+            -moz-transition:width 2s, height 2s, -moz-transform 2s; /* Firefox 4 */
+            -webkit-transition:width 2s, height 2s, -webkit-transform 2s; /* Safari and Chrome */
+            -o-transition:width 2s, height 2s, -o-transform 2s; /* Opera */
+        }
+        .ctr-right img:hover{
+            width: 600px;
+            height: 300px;
+            transform:rotate(360deg);
+            -moz-transform:rotate(360deg); /* Firefox 4 */
+            -webkit-transform:rotate(360deg); /* Safari and Chrome */
+            -o-transform:rotate(360deg); /* Opera */
+        }
+        .ku{
+            clear: both;
+            padding-top: 80px;
+            margin-left: 140px;
+        }
+
+        a{
+            color: #c60;
+            background: transparent;
+            font-weight: bold;
+            text-decoration: none;
+            padding-left: 40px;
+        }
+        ul{
+            padding: 0;
+        }
+        li {
+
+            padding: 1em;
+            list-style: none;
+
+        }
+        #imagegalley{
+            list-style: none;
+        }
+        #imagegalley li{
+            display: inline;;
+        }
+        #imagegalley li a img{
+            border: 0;
+            width: 80px;
+            height: 80px;
+        }
+        .mob{
+            margin-top: 40px;
+        }
+        .mob p{
+            padding-top: 20px;
+            padding-left: 60px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #a94442;
+            text-shadow: 2px 2px 4px;
+            padding-bottom: 20px;
+        }
+        .mob img{
+
+            display: block;
+            margin: 0 auto;
+            width: 900px;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>营养在线:</h2>
+        <p><em>请注重营养，不要忽略自己的健康，健康无法用金钱来衡量。</em></p>
+        <img src="image/banners.jpg">
+    </div>
+    <div class="content">
+        <div class="content-ctr">
+            <div class="ctr-left" >
+                <p>健康生活习惯:</p>
+                <img src="image/7618556_091527516000_2.jpg">
+            </div>
+            <div class="ctr-right" >
+                <p>食堂文化:</p>
+                <img src="image/4177082_104006094319_2.jpg">
+            </div>
+        </div>
+        <div class="ku">
+            <ul id="imagegalley">
+                <li>
+                    <a href="image/2393402_152032014722_2.jpg" title="孕妇营养" onclick="showPic(this);return false">
+                        <img src="image/2393402_152032014722_2.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/93a58PICxqY_1024.jpg" title="满分早餐的5个条件" onclick="showPic(this);return false">
+                        <img src="image/93a58PICxqY_1024.jpg">
+                    </a>
+                </li>
+                <li><a href="image/4557767_173915501685_2.jpg" title="豆腐皮的营养价值" onclick="showPic(this);return false">
+                    <img src="image/4557767_173915501685_2.jpg">
+                </a>
+                </li>
+                <li>
+                    <a href="image/4983332_150739408630_2.jpg" title="营养膳食" onclick="showPic(this);return false">
+                        <img src="image/4983332_150739408630_2.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/7272373_123842073380_2.jpg" title="关注青少年营养健康" onclick="showPic(this);return false">
+                        <img src="image/7272373_123842073380_2.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a href="image/8107283_141202982000_2.jpg" title="苦荞的营养价值" onclick="showPic(this);return false">
+                        <img src="image/8107283_141202982000_2.jpg">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="mob">
+            <p id="description">健康晚餐3大原则</p>
+            <img id="placeholder" src="image/10503504_151104064329_2.jpg" >
+
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function prepareGalley(){
+        if(!document.getElementsByTagName)return false;
+        if(!document.getElementById) return false;
+        if(!document.getElementById("imagegalley")) return false;
+        var gallery = document.getElementById("imagegalley");
+        var links =  gallery.getElementsByTagName('a');
+        for(var i=0;i<links.length;i++){
+            links[i].onclick=function(){
+                return showPic(this)? false:true;
+            }
+        }
+    }
+    function showPic(whichpic){
+        if(!document.getElementById("placeholder"))return false;
+        var source = whichpic.getAttribute('href');
+        var placeholder = document.getElementById("placeholder");
+        if(placeholder.nodeName !="IMG") return false;
+        placeholder.setAttribute('src',source);
+        if(document.getElementById("description")){
+            var text = whichpic.getAttribute('title')?whichpic.getAttribute('title'):"";
+            var description = document.getElementById("description");
+            if(description.firstChild.nodeType == 3){
+                description.firstChild.nodeValue =text;
+            }
+        }
+        return true;
+    }
+</script>
+</html>

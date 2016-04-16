@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>事件</title>  
+  <script type="text/javascript">
+    function count(){
+        var l ="";
+      var o = document.getElementById("txt1").value;
+      var r = document.getElementById("txt2").value;
+      var e = document.getElementById("select").value;
+      switch (e)
+      {
+          case"+":
+               l = parseInt(o)+parseInt(r);
+               break;
+               case"-":
+                   l=o-r;
+                   break;
+                   case"*":
+                       l=o*r;
+                       break;
+                       default:
+                       l=o/r;
+      }
+      document.getElementById("fruit").value = l;
+    }
+  </script> 
+ </head> 
+ <b></b><input type='text' id='txt1' /> 
+   <select id='select'>
+    	<option value='+'>+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+   </select>
+   <input type='text' id='txt2' /> 
+   <input type='button' value='=' onclick="count()"/> <!--通过 = 按钮来调用创建的函数，得到结果--> 
+   <input type='text' id='fruit' />   
+ </body>
+</html>

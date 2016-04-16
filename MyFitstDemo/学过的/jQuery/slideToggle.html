@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background: #1dba9d;
+        }
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $("#div1").slideToggle("slow");
+            });
+        });
+    </script>
+</head>
+<body>
+<button>滑动切换</button>
+<div id="div1"></div>
+</body>
+
+</html>

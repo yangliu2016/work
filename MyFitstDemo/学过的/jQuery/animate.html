@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div{
+            width: 200px;
+            height: 200px;
+            background: #1dba9d;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+               var div = $("div");
+                div.animate({
+                    left:'200px',
+                    width:'100px',
+                    height:'100px'
+
+                },"slow");
+                div.animate({
+                    fontSize:'50px'
+                },"slow");
+            })
+        })
+    </script>
+</head>
+<body>
+<button>动画效果</button>
+<div id="div">
+    <span>你好</span>
+</div>
+</body>
+</html>

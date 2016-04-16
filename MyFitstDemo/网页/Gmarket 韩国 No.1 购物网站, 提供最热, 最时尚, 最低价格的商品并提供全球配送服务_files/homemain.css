@@ -1,0 +1,617 @@
+@charset "utf-8";
+
+/* Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin:0;padding:0;border:0}
+
+html, body{height:100%}
+body, table, input, textarea, select, button, th, td, input, select, textarea, th, td, p, dl, dt, dd, li, pre{color:#444;font:12px Arial, Tahoma, sans-serif}
+
+fieldset, img{border:0}
+fieldset{display:block}
+
+table{border-collapse:collapse}
+
+ul, ol, li{list-style:none}
+var, em, dfn{font-style:normal}
+.blind,legend{overflow:hidden;position:absolute;top:-999em;left:0;display:block}
+caption, hr{display:none !important}
+.none{display:none !important}
+a:link, a:visited, a:active{color:#444;text-decoration:none}
+a:hover{color:#1179ea;text-decoration:underline;cursor:pointer}
+button{border:0;cursor:pointer}
+input[type="text"],input[type="password"],input[type="image"],input[type="search"]{-webkit-appearance:none;-webkit-border-radius:0}
+
+/* Basic Style */
+.float_left{float:left !important}
+.float_right{float:right !important}
+.clear{*zoom:1} 
+.clear:after{content:"";display:block;clear:both}
+.cl{clear:left}
+.cr{clear:right}
+.both{clear:both}
+.center{text-align:center !important}
+.left{text-align:left !important}
+.right{text-align:right !important}
+.bg_none{background:none !important}
+.border_none{border:none !important}
+table.fixed{table-layout:fixed}
+.bold{font-weight:bold}
+.hidden{visibility:hidden}
+.show, .block{display:block !important}
+.hide, .none{display:none !important}
+
+/*chromium 38 input box bug fix */
+@media screen and (-webkit-min-device-pixel-ratio:0){input{line-height:100% !important}}
+
+/* skipnavi */
+#skipnavi{position:absolute;left:0;top:0;z-index:5000;width:100%;height:0}
+#skipnavi li a{position:absolute;left:0;top:0;display:block;overflow:hidden;width:1px;height:1px;margin-left:-1px;margin-bottom:-1px;text-align:center;color:#000;white-space:nowrap}
+#skipnavi li a:focus, #skipnavi li a:hover, #skipnavi li a:active{width:100%;height:auto;padding:8px 0;background:#1179ea;color:#fff}
+
+/* utill */
+#utill{position:relative;z-index:1610;height:29px;background:#fff;border-bottom:1px solid #ddd}
+#utill .adv_utill{float:left;border-left:1px solid #ddd}
+#utill .adv_utill:after{content:"";display:block;clear:both}
+#utill .adv_utill li{float:left;width:69px;border-right:1px solid #ddd;text-align:center;height:29px;line-height:29px}
+#utill .adv_utill li a{display:block;color:#676767}
+#utill .adv_utill li.signin, #utill .adv_utill li.signout{width:219px;background-color:#FFF;border-bottom:1px solid #fff}
+#utill .adv_utill li.signin a, #utill .adv_utill li.signout em{font-weight:normal;color:#1179EA}
+#utill .adv_utill li.signin a{display:inline-block}
+#utill .adv_utill li.signout a{display:inline-block;margin-left:13px;padding-left:17px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -500px -175px;color:#666}
+#utill .utill{float:right}
+#utill .utill li{position:relative;float:left;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -500px -205px}
+#utill .utill li:first-child{background:none}
+#utill .utill li a, #utill .utill li.currency>span{position:relative;display:inline-block;padding:0 6px 0 8px;height:29px;color:#666;line-height:29px}
+#utill .utill li a:hover, #utill .utill ul li.active a{color:#1179ea}
+#utill .utill li span.arrow{overflow:hidden;position:absolute;right:0;top:5px;z-index:100;display:block;width:9px;height:19px;background-position:-5px -181px}
+#utill .utill li.active>a span.arrow{background-position:-35px -141px}
+#utill .utill li.livechat a{margin-right:8px;padding:0 20px 0 8px}
+#utill .utill li.livechat .icon{position:absolute;top:8px;right:0;display:block;width:15px;height:15px;text-indent:-999em;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -123px -183px}
+#utill .utill li.currency{padding-left:30px;color:#666}
+#utill .utill li.currency .icon{position:absolute;top:8px;left:10px;display:block;padding:0;width:15px;height:15px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -153px -183px;text-indent:-999em}
+#utill .utill li.currency .flag{position:absolute;right:0;top:7px}
+#utill .utill li.currency a, #utill .utill li.currency>span{padding-right:24px;color:#777;text-decoration:none}
+#utill .utill li.currency a:hover{color:#1179ea}
+#utill .utill li.currency .p_mark{margin-left:5px;padding:0 0 0 8px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -500px -212px}
+#utill .utill li.currency .usdB{padding:0 11px 0 0}
+
+/* header */
+#header{position:relative;z-index:1600;clear:both;height:107px;border-bottom:3px solid #1179ea}
+#header h1{float:left;margin:28px 0 0 16px}
+#header h1 a.logo{overflow:hidden;display:block;width:180px;height:46px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat;text-indent:-999em}
+#header h1.gw{float:left;margin:15px 0 0 20px}
+#header #all_category{position:absolute;left:0;top:81px;width:180px}
+#header #all_category a.all{position:relative;display:block;padding:6px 0 4px 37px;color:#1179ea;text-align:center;text-decoration:none}
+#header #all_category a.all span.arrow{display:inline-block;width:19px;height:19px;background-position:-62px -181px;vertical-align:middle}
+#header #all_category a.all.active span.arrow{background-position:-92px -181px}
+#header #all_category .category{overflow:hidden;position:relative;z-index:1600;display:none;width:978px;background:#fff;border:1px solid #1179ea;border-top:0 none}
+#header #all_category .column{float:left;width:165px;border-left:1px solid #eee}
+#header #all_category .column:first-child{width:169px;border-left:0 none}  
+#header #all_category .column{background:#fff;padding:16px 11px 60px 18px;min-height:466px}
+#header #all_category .column li{padding:3px 0 2px;line-height:15px;word-wrap:break-word}
+#header #all_category .column strong{display:block;margin-bottom:4px;font-size:14px}
+#header #all_category .column>li{margin-bottom:24px;line-height:22px}
+#header #all_category .shop{overflow:hidden;position:absolute;left:0;bottom:0;width:100%;background:#f5f8fb;border-right:1px solid #d5e1f0}
+#header #all_category .shop li{float:left;width:194px;border-left:1px solid #d5e1f0}
+#header #all_category .shop li.last{border-right:1px solid #d5e1f0}
+#header #all_category .shop li:first-child{width:198px;border-left:0 none} 
+#header #all_category .shop li a{display:block;padding:11px 11px 9px 16px;font-weight:bold}
+#header #all_category .shop li a .arrow{overflow:hidden;display:inline-block;width:19px;height:19px;background-position:-215px -181px;vertical-align:middle}
+#header #all_category .shop li a:hover .arrow{background-position:-245px -181px}
+#header #all_category .category a.button{position:absolute;right:10px;bottom:9px;/*z-index:1600;*/display:block;width:20px;height:20px;background-position:-180px -180px;text-indent:-999em}
+#header #search{position:relative;z-index:1610;float:left;margin:27px 0 0 26px;width:450px;height:50px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat 0 -60px}
+
+#header #search fieldset{display:block}
+#header #search #search_cate{position:absolute;left:3px;top:11px;cursor:pointer}
+#header #search #search_cate a{text-decoration:none}
+#header #search #search_cate a.search_cate{display:block;padding:0 28px 0 18px}
+#header #search #search_cate_word{display:inline-block;height:29px;color:#1179ea;line-height:29px;white-space:nowrap;text-overflow:ellipsis}
+#header #search #search_cate_word a{color:#1179ea}
+#header #search #search_cate span.arrow{position:absolute;right:0;top:5px;display:block;width:19px;height:19px;background-position:-62px -181px}
+#header #search #search_dropdown{position:absolute;left:0;top:36px;display:none;/*visibility:visible;*/width:auto;height:29px;background:#fff;line-height:29px}
+#header #search #search_dropdown.active{display:block;overflow-y:scroll;padding:4px 5px 0;width:203px;height:402px;border:1px solid #1179ea;border-top-color:#cad8f3;line-height:22px;z-index:1610}
+#header #search #search_dropdown a{display:block;text-indent:11px}
+#header #search input{border:0 none;font-size:14px;font-weight:bold}
+#header #search button.button_search{position:absolute;top:3px;right:3px;width:55px;height:44px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -460px -60px;font-size:0;text-indent:-999em}
+#searchfield_outer{margin:0;width:390px}
+#searchfield_in{margin:0;padding:10px 0 10px 76px}
+#searchfield:focus{outline-width:0}
+#searchfield{background:transparent;border:0;color:#000;font-size:13px;height:29px;line-height:29px;outline:0;padding:0;width:100%;-webkit-appearance:none}
+#header #search .wauto{width:auto}
+#header #search .w100{overflow:hidden;width:100px}
+
+/* ?∞Í?Í≤Ä?âÏñ¥ ?êÎèô?ÑÏÑ± */
+#header #search .search-auto{position:absolute;top:47px;right:7px;display:none;width:100%}
+#header #search .search-auto>div{margin-left:66px;border:1px solid #0082f0;border-top-color:#cad8f3;background:#fff}
+#header #search .search-auto ul{padding:10px 0}
+#header #search .search-auto ul li{color:#444}
+#header #search .search-auto ul li.none{padding-left:15px;height:21px;line-height:21px}
+#header #search .search-auto ul li a{overflow:hidden;display:block;height:12px;padding:2px 15px 7px 15px;color:#444;line-height:160%}
+#header #search .search-auto ul li a:hover{display:block;background:#f6f6f6;text-decoration:none}
+#header #search .search-auto ul li strong{color:#0082f0;font-weight:bold}
+
+#header .popular{overflow:hidden;float:right;margin-top:30px}
+#header .popular li{position:relative;float:left;margin-left:15px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat}
+#header .popular li a{display:block;padding-top:36px;height:11px;font-size:10px;text-align:center;text-decoration:none}
+#header .popular li.shopping{width:50px;background-position:-190px 0}
+#header .popular li.shopping a{padding-right:8px}
+#header .popular li.wish{width:52px;background-position:-250px 0}
+#header .popular li.lucky{width:67px;background-position:-310px 0}
+#header .popular li.coupon{width:60px;background-position:-385px 0}
+#header .popular li .count{position:absolute;right:0;top:0;padding:2px;width:21px;height:12px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -450px 0;color:#0082f0;font-family:tahoma;font-size:11px;text-align:center;line-height:12px}
+
+/* container */
+#container{min-height:520px}
+
+/* footer */
+#footer{padding-bottom:75px;border-top:1px solid #999;color:#999;line-height:20px}
+#footer div.link{margin-bottom:18px;border-bottom:1px solid #ddd}
+#footer div.link ul{overflow:hidden;margin:0 auto;width:980px}
+#footer div.link li{float:left;width:140px}
+#footer div.link li a{display:block;padding:16px 0 14px;text-align:center;font-size:15px}
+#footer div.link li .facebook_logo{display:inline-block;width:17px;height:15px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -300px -180px;vertical-align:-2px;*vertical-align:middle}
+html[lang="zh"] #footer div.link li .facebook_logo{background-position:-270px -180px}
+#footer div.copyright{position:relative;margin:0 auto;padding-bottom:20px;width:980px}
+#footer div.copyright dl{padding:0 150px 0 20px}
+#footer div.copyright dl:after{content:"";display:block;clear:both}
+#footer div.copyright dl dt{float:left;font-weight:bold;width:145px;color:#999;vertical-align:top}
+#footer div.copyright dl dd{color:#999;vertical-align:top;padding-left:145px;text-indent:0}
+#footer div.copyright dl dt + dd{margin-bottom:2px}
+#footer div.copyright dl dt.corp{margin-top:18px}
+#footer div.copyright dl dt.corp + dd{margin-top:19px;line-height:1.4}
+#footer div.copyright dl dt.corp + dd a{margin-top:6px}
+#footer div.copyright dl dd a.mail{color:#999;text-decoration:none}
+#footer div.copyright dl dd a.mail:hover,
+#footer div.copyright dl dd a.mail:focus,
+#footer div.copyright dl dd a.mail:active{color:#1179EA;border-bottom:1px solid #1179EA}
+#footer div.copyright .logo{overflow:hidden;position:absolute;right:0;top:35px;display:block;width:150px;height:24px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -330px -180px;text-indent:-999em}
+#footer .footer-wrap{border-bottom:1px solid #ddd}
+#footer p.footter_btm{margin:0 auto;width:960px;padding:16px 0 0 20px;color:#999;line-height:20px}
+
+/* wing */
+#wing.lp{top:0}
+#wing{position:absolute;right:50%;top:140px;margin-right:-597px;width:96px;height:auto;z-index:1600;background:#f7f7f7;border:1px solid #bbb}
+
+#wing .button_toggle a{position:absolute;left:-11px;top:-1px;width:11px;height:36px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -530px -240px;text-indent:-999em}
+#wing.close .button_toggle a{background-position:-510px -240px}
+#topbanner ~ #wing{top:211px}  
+#wing>ul>li{position:relative;border-bottom:1px solid #ddd}
+#wing>ul>li>a{display:block;/*text-indent:-999em;min-height:35px;*/padding:6px 20px 0 36px;height:29px;font-size:11px;color:#777;text-decoration:none}
+#wing.close>ul>li>a{text-indent:-999em}
+#wing>ul>li>a span.icon{position:absolute;display:block;left:12px;top:10px;width:16px;height:16px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -490px -240px}
+
+#wing>ul>li.size>a span.icon{background-position:-490px -260px}
+#wing>ul>li.fee>a span.icon{background-position:-490px -280px}
+#wing>ul>li.viewed>a span.icon, #wing>ul>li.mdpick>a span.icon{background-position:-490px -300px}
+#wing>ul>li.viewed, #wing>ul>li.mdpick{padding-bottom:12px;background:#e6e6e6;border-bottom:none}
+html[lang="zh"] #wing>ul>li.viewed em{display:none}
+#wing>ul>li.mdpick{display:none}
+#wing div.item_area{margin:0 auto;width:70px}
+#wing div.item_area li{position:relative;margin-bottom:4px}
+#wing div.item_area li a img{border:1px solid #e6e6e6}
+#wing div.item_area li a.active img{border:1px solid #0164d1;border-left-color:#e6e6e6}
+#wing div.item_area li div.overview{display:none;position:absolute;right:69px;top:0;padding:10px 0 9px 14px;width:130px;height:51px;border:1px solid #0164d1;border-right:none;color:#fff;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat 0 -350px;cursor:pointer}
+#wing div.item_area li div.overview span.item_name{overflow:hidden;display:block;padding:0;width:120px;height:14px;white-space:nowrap;text-overflow:ellipsis;line-height:1.3}
+#wing div.item_area li div.overview span.price{display:block;margin-top:8px;padding:0 4px;font-family:tahoma}
+#wing div.item_area li div.overview span.price strong{display:block;margin-top:2px;color:#fff} 
+#wing div.item_area li div.overview span.price strong{display:block;margin-top:2px;color:#fff}
+#wing div.item_area li div.overview a{color:#fff}
+#wing div.item_area li div.overview a.button.close{position:absolute;right:-70px;top:0;z-index:401;display:block;width:15px;height:14px;background:#0164d1 url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -491px -320px;text-indent:-999em}
+#wing div.item_area div.button{position:relative;height:17px;text-align:center;line-height:17px}
+#wing div.item_area div.button a.prev, #wing div.item_area div.button a.next{position:absolute;top:0;display:block;width:14px;height:17px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat;text-indent:-999em}
+#wing div.item_area div.button a.prev{left:0;background-position:-510px -280px}
+#wing div.item_area div.button a.next{right:0;background-position:-530px -280px}
+.go_top a{display:block;height:30px;line-height:30px;text-align:center;font-weight:bold;text-decoration:none}
+#wing.close{width:19px;margin-right:-513px}
+#wing.close .button_toggle{display:block}
+#wing.close>ul>li>a span.icon, #wing.close>ul>li>strong span.icon{left:2px}
+#wing.close>ul>li.viewed, #wing.close>ul>li.mdpick{background:none;border-bottom:none}
+#wing.close>ul>li div.item_area, #wing.close .go_top{display:none}
+#homemain #wing .button_toggle, #myg #wing .button_toggle{display:none}
+
+html[lang="zh"] #header .popular li a{padding-top:34px;height:14px;font-size:12px}
+html[lang="zh"] #wing>ul>li>a{padding:8px 0px 0 22px;height:27px;font-size:12px}
+html[lang="zh"] #wing>ul>li>a span.icon{left:5px}
+
+/* common */
+a.button, span.arrow{background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat}
+.wrap{position:relative;margin:0 auto;width:980px;*zoom:1}
+.wrap:after{content:"";display:block;clear:both}
+.flag{overflow:hidden;display:block;float:left;width:19px;height:13px;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat;text-indent:-999em}
+.flag.al{background-position:0 -220px}/* Albania */
+.flag.ae{background-position:-30px -220px}/* Arab Emirates */
+.flag.ar{background-position:-60px -220px}/* Argentina */
+.flag.au{background-position:-90px -220px}/* Australia */
+.flag.at{background-position:-120px -220px}/* Austria */
+.flag.bd{background-position:-150px -220px}/* Bangladesh */
+.flag.kz{background-position:-180px -220px}/* Kazakhstan */
+.flag.ke{background-position:-210px -220px}/* Kenya */
+.flag.lv{background-position:-240px -220px}/* Latvia */
+.flag.lu{background-position:-270px -220px}/* Luxembourg */
+.flag.mo{background-position:-300px -220px}/* Macau */
+.flag.my{background-position:-330px -220px}/* Malaysia */
+.flag.by{background-position:0 -240px}/* Belarus */
+.flag.be{background-position:-30px -240px}/* Belgium */
+.flag.br{background-position:-60px -240px}/* Brazil */
+.flag.bn{background-position:-90px -240px}/* Brunei Darussalam */
+.flag.bg{background-position:-120px -240px}/* Bulgaria */
+.flag.kh{background-position:-150px -240px}/* Cambodia */
+.flag.ca{background-position:0 -260px}/* Canada */
+.flag.cl{background-position:-30px -260px;clear:none}/* Chile */
+.flag.cn{background-position:-60px -260px}/* China */
+.flag.cr{background-position:-90px -260px}/* CostaRica */
+.flag.hr{background-position:-120px -260px}/* Croatia */
+.flag.cz{background-position:-150px -260px}/* Czech Republic */
+.flag.dk{background-position:0 -280px}/* Denmark */
+.flag.do{background-position:-30px -280px}/* Dominican Republic */
+.flag.ec{background-position:-60px -280px}/* Ecuador */
+.flag.eg{background-position:-90px -280px}/* Egypt */
+.flag.sv{background-position:-120px -280px}/* El Salvador */
+.flag.fj{background-position:-150px -280px}/* Fiji */
+.flag.fi{background-position:0 -300px}/* Finland */
+.flag.fr{background-position:-30px -300px}/* France */
+.flag.de{background-position:-60px -300px}/* Germany */
+.flag.gr{background-position:-90px -300px}/* Greece */
+.flag.hk{background-position:-120px -300px}/* Hong Kong */
+.flag.hu{background-position:-150px -300px}/* Hungary */
+.flag.in{background-position:0 -320px}/* India */
+.flag.id{background-position:-30px -320px}/* Indonesia */
+.flag.ie{background-position:-60px -320px}/* Ireland */
+.flag.il{background-position:-90px -320px}/* Israel */
+.flag.it{background-position:-120px -320px}/* Italy */
+.flag.jp{background-position:-150px -320px}/* Japan */
+.flag.mx{background-position:-180px -240px}/* Mexico */
+.flag.mn{background-position:-210px -240px}/* Mongolia */
+.flag.ma{background-position:-240px -240px}/* Morocco */
+.flag.mm{background-position:-270px -240px}/* Myanma */
+.flag.nl{background-position:-300px -240px}/* Netherlands */
+.flag.nz{background-position:-330px -240px}/* New Zealand */
+.flag.ng{background-position:-180px -260px}/* Nigeria */
+.flag.no{background-position:-210px -260px}/* Norway */
+.flag.pe{background-position:-240px -260px}/* Peru */
+.flag.ph{background-position:-270px -260px}/* Philippines */
+.flag.pl{background-position:-300px -260px}/* Poland */
+.flag.pt{background-position:-330px -260px}/* Portugal */
+.flag.qa{background-position:-180px -280px}/* Qatar */
+.flag.ro{background-position:-210px -280px}/* Romania */
+.flag.ru{background-position:-240px -280px}/* Russian Federation */
+.flag.sa{background-position:-270px -280px}/* Saudi Arabia */
+.flag.sg{background-position:-300px -280px}/* Singapore */
+.flag.sk{background-position:-330px -280px}/* Slovakia */
+.flag.si{background-position:-180px -300px}/* Slovenia */
+.flag.es{background-position:-210px -300px}/* Spain */
+.flag.lk{background-position:-240px -300px}/* Sri Lanka */
+.flag.se{background-position:-270px -300px}/* Sweden */
+.flag.ch{background-position:-300px -300px}/* Switzerland */
+.flag.tw{background-position:-330px -300px}/* Taiwan */
+.flag.th{background-position:-180px -320px}/* THAILAND */
+.flag.tr{background-position:-210px -320px}/* Turkey */
+.flag.ua{background-position:-240px -320px}/* Ukraine */
+.flag.gb{background-position:-270px -320px}/* United Kingdom */
+.flag.us{background-position:-300px -320px}/* United States */
+.flag.uz{background-position:-330px -320px}/* Uzbekistan */
+.flag.vn{background-position:-360px -220px}/* Vietnam */       
+.flag.kr{background-position:-390px -220px}/* koea */      
+.flag.eu{background-position:-420px -220px}/* eu */      
+.flag.cy{background-position:-450px -220px}/* Cyprus */
+.flag.dz{background-position:-360px -240px}/* Algeria */
+.flag.bh{background-position:-390px -240px}/* Bahrain */
+.flag.bw{background-position:-420px -240px}/* Botswana */
+.flag.cv{background-position:-450px -240px}/* Cape Verde */
+.flag.ee{background-position:-360px -260px}/* Estonia */
+.flag.et{background-position:-390px -260px}/* Ethiopia */
+.flag.ir{background-position:-420px -260px}/* Iran */
+.flag.jo{background-position:-450px -260px}/* Jordan */
+.flag.mu{background-position:-360px -280px}/* Mauritius */
+.flag.mz{background-position:-390px -280px}/* Mozambique */
+.flag.an{background-position:-420px -280px}/* NETHERLANDS ANTILLES */
+.flag.om{background-position:-450px -280px}/* Oman */
+.flag.tz{background-position:-360px -300px}/* Tanzania */
+.flag.tn{background-position:-390px -300px}/* Tunisia */
+.flag.zm{background-position:-420px -300px}/* Zambia */
+.flag.dj{background-position:-450px -300px}/* Djibouti */
+.flag.ls{background-position:-360px -320px}/* Lesotho */
+.flag.mk{background-position:-390px -320px}/* Macedonia */
+.flag.pa{background-position:-420px -320px}/* Panama */
+.flag.rw{background-position:-450px -320px}/* Rwanda */
+/* //common */
+
+.title_lang>span, .title_lang>a{overflow:hidden;display:block;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat;text-indent:-999em}
+
+.wrap>.area{overflow:hidden;clear:both}
+a.button_prev, a.button_next, a.button_close{overflow:hidden;display:block;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat;text-indent:-999em}
+
+.aside{position:relative;*z-index:1;float:left;width:219px;border:1px solid #ddd;border-width:0 0 1px 1px}
+
+/* WPR-1040 */
+#topbanner{position:relative;top:0;left:0;z-index:55;height:70px;border-bottom:1px solid #ddd}
+#topbanner iframe{width:100%;height:70px;vertical-align:top}
+#topbanner .button_close>a{position:absolute;display:block;left:50%;top:18px;z-index:60;margin-left:455px;zoom:1}
+#topbanner .button_close>a>span{overflow:hidden;display:block;width:35px;height:35px;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat -250px -80px;line-height:999em}
+/* //WPR-1040 */
+
+#gnb{}
+#gnb>li{margin:-1px 0;width:220px;background:none;border:1px solid #ddd;border-width:1px 0;line-height:19px}
+#gnb>li >a{display:block;padding:18px 0 7px 65px;height:49px;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat;color:#636872;font-size:15px;text-decoration:none}
+html[lang="zh"] #gnb>li >a{padding:28px 0 7px 65px;height:39px}
+#gnb>li.active{position:relative;left:-1px;top:0;padding-left:1px;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat;border-top:1px solid #52699f;border-bottom:1px solid #52699f}
+#gnb>li.active a{position:relative;z-index:101;border-right:1px solid #fff}
+#gnb>li:hover{}
+#gnb li.m1 a{background-position:-305px 0} 		
+#gnb li.m2 a{background-position:-305px -80px} 	
+#gnb li.m3 a{background-position:-305px -160px}
+#gnb li.m4 a{background-position:-305px -240px}
+#gnb li.m5 a{background-position:-305px -320px}
+#gnb li.m6 a{background-position:-305px -400px}
+#gnb div.subnav{display:none;position:absolute;left:220px;z-index:100;padding:20px 18px 20px;width:195px;min-height:409px;background:#fff;border:1px solid #52699f}
+#gnb .m1 .subnav{top:-1px}
+#gnb .m2 .subnav{top:-76px}
+#gnb .m3 .subnav{top:-151px}
+#gnb .m4 .subnav{top:-226px}
+#gnb .m5 .subnav{top:-301px}
+#gnb .m6 .subnav{top:-376px}
+#gnb div.subnav ul li a{display:block;background:none;color:#52699f;line-height:22px;text-indent:2px}
+#gnb div.subnav>ul>li:first-child>a{margin-top:0}
+#gnb div.subnav>ul>li:first-child>strong{margin-top:0}
+#gnb div.subnav>ul  li strong{display:block;background:none;color:#52699f;line-height:24px;text-indent:2px;border-bottom:1px solid #ced6e9;margin:15px 0 7px 0}
+#gnb div.subnav .button_close{position:absolute;right:7px;top:6px;z-index:100;width:25px;height:25px;background-position:-247px -117px}
+.aside .ad_area .thumb{width:219px;height:100px;vertical-align:bottom}
+/* WPR-1630 */
+#gnb #menu1.subnav, #gnb #menu5.subnav {width:405px}
+#gnb #menu1.subnav > ul, #gnb #menu5.subnav > ul{float:left; width:183px;padding-left:19px;height:408px}
+#gnb #menu1.subnav > ul:first-child, #gnb #menu5.subnav > ul:first-child{padding-left:0;padding-right:19px;border-right:1px solid #cfd6e9}
+#gnb #menu1.subnav > ul > li:first-child{height:155px}
+#gnb #menu2.subnav > ul > li:first-child{height:153px}
+#gnb #menu3.subnav > ul > li:first-child{height:109px}
+#gnb #menu4.subnav > ul > li:first-child{height:198px}
+#gnb #menu5.subnav > ul:first-child > li:first-child{height:131px}
+
+.swipe{position:relative}
+.swipe a.button_prev, .swipe a.button_next{position:absolute;z-index:10;width:50px;height:76px}
+.swipe a.button_prev{left:0} 
+.swipe a.button_next{right:0;background-position:-60px 0} 
+.swipe li{float:left}
+.swipe li a{display:block}
+.swipe li a img{vertical-align:bottom}
+
+#main_banner{float:right;width:758px;height:549px;border:1px solid #eee;border-top-width:0;text-align:center}
+#main_banner .swipe{width:758px;height:549px;border-top-width:0}
+#main_banner a.button_prev, #main_banner a.button_next{top:224px}
+#main_banner a.button_prev{background-position:-110px -820px}
+#main_banner a.button_next{background-position:-170px -820px}
+#main_banner a.button_prev:hover{background-position:-110px -900px}
+#main_banner a.button_next:hover{right:0;background-position:-170px -900px}
+#main_banner li{width:758px;height:549px}
+#main_banner li>a, #main_banner li>.area{float:left}
+#main_banner .type2 .item2,
+#main_banner .type3 .area{border-left:1px solid #eee}
+#main_banner .type3 .item2{border-top:1px solid #eee}
+#main_banner .type4 .area_a{margin-top:26px;text-align:center}
+#main_banner .type4 .area_b{overflow:hidden;margin:25px auto 0;width:645px}
+#main_banner .type4 .area_b a{float:left;margin:0 8px 15px 7px;border:1px solid #ddd}
+#main_banner .type1 img{width:758px;height:549px}
+#main_banner .type3 img{width:519px;height:549px}
+#main_banner .type3 .area .item1>img,
+#main_banner .type3 .area .item2>img{width:238px;height:274px}
+#main_banner .type4 .area_a img{width:550px;height:55px}
+#main_banner .type4 .area_b img{width:198px;height:188px}
+#main_banner .paginate{position:absolute;left:0;bottom:10px;z-index:10;width:758px;height:30px}
+
+#main_banner .paginate a{overflow:hidden;display:inline-block;width:28px;height:28px;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat -250px 0;text-indent:-999em}
+#main_banner .paginate a.active{background-position:-250px -40px}
+
+.best{position:relative;float:left;margin-top:30px;width:100%;padding:29px 31px;width:712px;height:309px;border:1px solid #eee;border-top:2px solid #222}
+.best .title_lang a{margin:0 0 25px 14px;width:144px;height:27px;background-position:0 -470px}
+html[lang="zh"] .best .title_lang a{background-position:0 -510px}
+.best ul{position:relative;width:712px;height:270px}
+.best li{position:relative;float:left;margin:0 9px;width:160px;height:270px;line-height:16px}
+.best .title{overflow:hidden;display:block;padding:5px 3px 0;height:32px;font-size:14px}
+.best .thumb{width:160px;height:160px}
+.best .price{display:block;margin-top:10px;padding:0 3px;font-family:tahoma}
+.best .price del{display:inline-block;height:14px;color:#999;font-family:tahoma}
+.best .price .sale{padding:0 12px 0 5px;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat 100% -487px;color:#0082f0;font-family:tahoma;text-decoration:none}
+.best .price .sale span{overflow:hidden;position:absolute;top:-999em;left:0;display:block}
+.best .price>strong{display:block;margin-top:4px;color:#444;font-size:16px;font-weight:normal}
+.best .price>strong span{font-weight:bold}
+.best .price>strong.second_price{margin-top:1px;font-size:12px}
+.best a.button_prev, .best a.button_next{position:absolute;top:82px;width:41px;height:41px}
+.best a.button_prev{left:-30px;background-position:0 -820px}
+.best a.button_next{right:-30px;background-position:-60px -820px}
+.best a.button_prev:hover{background-position:0 -870px}
+.best a.button_next:hover{background-position:-60px -870px}
+.best a.button_more{position:absolute;right:-6px;top:-49px;padding-right:16px;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat 100% -522px;color:#222}
+.best .rank{position:absolute;top:0;z-index:2;display:block;width:24px;height:24px;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat;text-indent:-999em}
+.best .n1{background-position:0px -300px}
+.best .n2{background-position:-30px -300px}
+.best .n3{background-position:-60px -300px}
+.best .n4{background-position:-90px -300px}
+.best .n5{background-position:-120px -300px}
+.best .n6{background-position:-150px -300px}
+.best .n7{background-position:-180px -300px}
+.best .n8{background-position:-210px -300px}
+.best .n9{background-position:-240px -300px}
+.best .n10{background-position:-270px -300px}
+.best .n11{background-position:0px -330px}
+.best .n12{background-position:-30px -330px}
+.best .n13{background-position:-60px -330px}
+.best .n14{background-position:-90px -330px}
+.best .n15{background-position:-120px -330px}
+.best .n16{background-position:-150px -330px}
+.best .n17{background-position:-180px -330px}
+.best .n18{background-position:-210px -330px}
+.best .n19{background-position:-240px -330px}
+.best .n20{background-position:-270px -330px}
+.best .n21{background-position:0px -360px}
+.best .n22{background-position:-30px -360px}
+.best .n23{background-position:-60px -360px}
+.best .n24{background-position:-90px -360px}
+.best .n25{background-position:-120px -360px}
+.best .n26{background-position:-150px -360px}
+.best .n27{background-position:-180px -360px}
+.best .n28{background-position:-210px -360px}
+.best .n29{background-position:-240px -360px}
+.best .n30{background-position:-270px -360px}
+.best .n31{background-position:0px -390px}
+.best .n32{background-position:-30px -390px}
+.best .n33{background-position:-60px -390px}
+.best .n34{background-position:-90px -390px}
+.best .n35{background-position:-120px -390px}
+.best .n36{background-position:-150px -390px}
+.best .n37{background-position:-180px -390px}
+.best .n38{background-position:-210px -390px}
+.best .n39{background-position:-240px -390px}
+.best .n40{background-position:-270px -390px}
+.best .n41{background-position:0px -420px}
+.best .n42{background-position:-30px -420px}
+.best .n43{background-position:-60px -420px}
+.best .n44{background-position:-90px -420px}
+.best .n45{background-position:-120px -420px}
+.best .n46{background-position:-150px -420px}
+.best .n47{background-position:-180px -420px}
+.best .n48{background-position:-210px -420px}
+.best .n49{background-position:-240px -420px}
+.best .n50{background-position:-270px -420px}
+
+.ad{float:right;margin-top:30px;width:192px;height:368px;border-top:2px solid #222}
+.ad .thumb{width:192px;height:368px;vertical-align:bottom}
+.ad a.button_prev, .ad a.button_next{position:absolute;top:153px;width:30px;height:60px}
+.ad a.button_prev{background-position:0 -920px}
+.ad a.button_next{background-position:-40px -920px}
+.ad a.button_prev:hover{background-position:0 -990px}
+.ad a.button_next:hover{background-position:-40px -990px}
+
+.look{margin-top:60px;padding:40px 0 50px;background:#f6f6f6}
+.look .title{position:relative;height:22px;border-bottom:2px solid #222}
+.look .title>h2 a{overflow:hidden;display:block;margin:0 auto -22px;width:237px;height:44px;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat 0 -80px;text-indent:-999em}
+.look .link{overflow:hidden;display:block;clear:both;position:absolute;top:48px;height:27px;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat;text-indent:-999em}
+.look .link.fashion{left:4px;top:-35px;width:117px;background-position:0 -170px}
+.look .link.beauty{right:0;top:-35px;width:107px;background-position:-130px -170px}
+.look .link.brand{position:static;margin:40px auto 0;width:126px;background-position:0 -130px}
+
+/* Look */
+.look .item_list{position:relative;float:left;margin:60px 0 40px;width:482px;height:670px}
+.look .area_b{margin-left:16px}
+.look .item_list a{position:absolute}
+.look .item_list img{border:1px solid #ddd;vertical-align:bottom}
+.look .item_list a:hover img{border-color:#777}
+.look .item_list img.thumb_sz1{width:231px;height:259px}
+.look .item_list img.thumb_sz2{width:231px;height:390px}
+.look .item_list img.thumb_sz3{width:480px;height:259px}
+.look .item_list img.thumb_sz4{width:231px;height:186px}
+.look .item_list.type1 .n1{top:0;left:0}
+.look .item_list.type1 .n2{bottom:0;left:0}
+.look .item_list.type1 .n3{top:0;left:249px}
+.look .item_list.type1 .n4{bottom:0;left:249px}
+.look .item_list.type2 .n1{top:0;left:0}
+.look .item_list.type2 .n2{top:278px;left:0}
+.look .item_list.type2 .n3{bottom:0;left:0}
+.look .item_list.type2 .n4{bottom:0;right:0}
+
+.look .brand{margin:20px auto 0;width:901px}
+.look .brand .item_list{margin:0}
+.look .brand li{margin:0 7px;width:166px;height:222px}
+.look .brand li .thumb{width:164px;height:220px;border:1px solid #ddd}
+.look .brand a.button_prev, .look .brand a.button_next{top:73px}
+.look .brand a.button_prev{left:-50px;background-position:-230px -820px}
+.look .brand a.button_next{right:-50px;background-position:-290px -820px}
+.look .brand a.button_prev:hover{background-position:-230px -900px}
+.look .brand a.button_next:hover{background-position:-290px -900px}
+
+.superdeal{overflow:hidden;padding-top:33px;width:980px}
+.superdeal .title_lang span{margin:0 auto 27px;width:390px;height:120px;background-position:0 -550px}
+html[lang="zh"] .superdeal .title_lang span{width:334px;background-position:0 -680px}
+.superdeal .item_list{overflow:hidden;width:992px}
+.superdeal .item_list li{position:relative;float:left;margin:0 12px 16px 0;border:1px solid #ddd}
+.superdeal .item_list li:hover{border-color:#777}
+.superdeal .item_list li.first{clear:both}
+.superdeal .item_list li.unit2{width:482px}
+.superdeal .item_list li.unit3{width:318px;margin-left:-2px}
+.superdeal .item_list li.unit3.first{margin-left:0}
+.superdeal .item_list li.unit4{width:234px}
+.superdeal .item_list li>a{display:block}
+.superdeal .thumb{vertical-align:bottom}
+.superdeal .title{overflow:hidden;display:block;margin:18px 25px 5px;height:24px;font-size:18px;font-family:sans-serif;font-weight:bold;text-align:right;white-space:nowrap}
+.superdeal .price{display:block;padding:0 25px 20px;font-family:tahoma;text-align:right}
+.superdeal .price del{display:block;height:19px;color:#999;font-size:16px;font-family:tahoma}
+.superdeal .price .sale{position:absolute;right:-1px;top:283px;padding-top:11px;width:74px;height:46px;background:#000;color:#fff;text-align:center;font-size:20px;line-height: 17px}
+.superdeal .price .sale strong{font-size:24px}
+.superdeal .price .sale span{font-size:18px}
+.superdeal .price>strong{display:inline-block;margin-top:-7px;color:#222;font-size:28px;font-weight:normal}
+.superdeal .price>strong span{font-weight:bold}
+.superdeal .price>strong.second_price{font-size:16px}
+.superdeal .unit2 .thumb{width:482px;height:340px}
+.superdeal .unit3 .thumb{width:318px;height:340px}
+.superdeal .unit4 .thumb{width:234px;height:250px}
+.superdeal .unit3 .title,.superdeal .unit4 .title{margin:10px 18px 0;height:33px;font-size:15px;line-height:16px;white-space:normal}
+.superdeal .unit3 .price,.superdeal .unit4 .price{padding:0 18px 16px}
+.superdeal .unit3 .price del,.superdeal .unit4 .price del{margin-top:10px;font-size:14px}
+.superdeal .unit3 .price>strong,.superdeal .unit4 .price>strong{margin-top:1px;font-size:16px}
+.superdeal .unit4 .price>strong{display:block}
+.superdeal .unit3 .price .sale,.superdeal .unit4 .price .sale{padding-top:4px;height:23px;font-size:12px}
+.superdeal .unit3 .price .sale{top:313px}
+.superdeal .unit4 .price .sale{top:223px}
+.superdeal .unit3 .price .sale strong,.superdeal .unit4 .price .sale strong{font-size:16px}
+.superdeal .unit3 .price .sale span,.superdeal .unit4 .price .sale span{font-size:12px}
+.superdeal span.soldout{display:none}
+.superdeal li.soldout:hover{border-color:#ddd}
+.superdeal li.soldout span.soldout{overflow:hidden;display:block;background:url(//pics.gmarket.co.kr/pc/gc/main/main.png) no-repeat;text-indent:-999em}
+.superdeal li.soldout>span.soldout{position:absolute;left:50%;top:75px;margin-left:-95px;width:190px;height:190px;background-position:0 -1060px}
+.superdeal li.unit4.soldout>span.soldout{top:30px}
+
+.superdeal li.unit2.soldout .price{padding-top:20px;height:30px}
+.superdeal li.unit3.soldout .price{padding-top:20px;height:31px}
+.superdeal li.unit4.soldout .price{padding-top:30px;height:41px}
+.superdeal li.soldout .price span.soldout{float:right;width:120px;height:24px;background-position:0 -200px;text-align:left}
+html[lang="zh"] .superdeal li.soldout span.soldout{background-position:-200px -1060px}
+html[lang="zh"] .superdeal li.soldout .price span.soldout{width:66px;background-position:-130px -200px}
+
+.board{float:left;margin:60px 0;width:318px;height:184px;border:1px solid #ddd}
+.board .title_lang{display:block;padding:10px 25px 12px;border-bottom:1px solid #ddd}
+.board .title_lang>a{width:113px;height:27px;background-position:-160px -470px;text-indent:-999em}
+html[lang="zh"] .board .title_lang>a{width:83px;background-position:-160px -510px}
+.board ul{margin:20px 16px 22px 26px;width:276px}
+.board li{overflow:hidden;padding:8px 0;white-space:nowrap;text-overflow:ellipsis}
+	
+.ad_area2{float:left;margin:60px 0}
+.ad_area2 a{display:block;float:left;margin-left:10px;width:318px;height:184px;border:1px solid #ddd}
+
+/* post_layer */
+.post_layer{position:fixed;left:50%;z-index:9999;bottom:0;margin-left:204px;width:292px;height:186px;background:url(//pics.gmarket.co.kr/pc/gc/main/post_layer.png) no-repeat;text-align:center}
+.post_layer h3.blind{left:50px;top:20px;background:url(//pics.gmarket.co.kr/pc/gc/main/post_layer.png) no-repeat 0 -200px;width:190px;height:40px;text-indent:-999em}
+.post_layer.notice h3.blind{left:110px;background-position:-200px -200px;width:70px}
+html[lang="zh"] .post_layer h3.blind{background-position:0 -250px}
+html[lang="zh"] .post_layer.notice h3.blind{background-position:-200px -250px}
+.post_layer .layer_cont{position:relative}
+.post_layer .layer_cont .text_cont{text-align:center;padding-top:80px}
+.post_layer .layer_cont .text_cont img{width:264px;height:95px}
+.post_layer .layer_cont a.abtn{margin-top:135px}
+.post_layer .layer_cont .close{position:absolute;top:14px;right:14px;width:20px;height:20px;text-indent:-999em;background:url(//pics.gmarket.co.kr/pc/gc/common.png) no-repeat -488px -318px} /* WPR-1964 */
+
+/* geo-ip */
+.layer_modal_pop_bg{position:absolute;left:0;top:0;width:100%;height:2596px;background:url(//pics.gmarket.co.kr/pc/gc/bg_opacity.png) repeat}
+.modalPop3{position:absolute;left:0;top:0;width:100%;z-index:3000}
+.modalPop3 .pop3_modal{overflow:hidden;position:relative;left:50%;top:200px;margin:0 0 0 -286px;width:600px}
+.modalPop3 div.top{width:600px;height:460px;background:#f2f2f2 url(//pics.gmarket.co.kr/pc/gc/main/title_choose_lang.png) no-repeat}
+.modalPop3 div.top a{float:left;width:230px;height:280px}
+.modalPop3 div.top a.ko{margin:111px 0 0 55px}
+.modalPop3 div.top div.ko{float:left;width:250px;margin:111px 0 0 42px}
+.modalPop3 div.top a.en{margin:111px 0 0 30px}
+.modalPop3 div.top div.en{float:left;width:250px;margin:111px 0 0 10px;position:relative;overflow:hidden}
+.modalPop3 div.top div.en div.modal_txt1{position:absolute;left:25px;top:190px;clear:both}
+.modalPop3 div.top div.en div.modal_txt2{position:absolute;left:25px;top:215px;clear:both}
+.modalPop3 div.top div.en div.modal_txt3{position:absolute;left:25px;top:240px;clear:both}
+.modalPop3 div.top div.en div h3{float:left;width:70px}
+.modalPop3 div.top div.en div div.sele{float:left}
+.modalPop3 div.bot{width:600px;height:37px;background:#dfdfdf;position:relative}
+.modalPop3 div.bot label{padding:10px 0 0 15px;*padding:7px 0 0 15px;display:inline-block}
+.modalPop3 div.bot label a{color:#666;font-size:11px;font-family:tahoma;text-decoration:none;padding-left:5px}
+.modalPop3 div.bot label input{position:relative;top:2px}
+.modalPop3 div.bot a.close{position:absolute;top:12px;right:15px}
+div.modalPop3 div.pop3_modal div.top div.en div h3.bl_type1{background-position:0 -122px;font-size:12px;line-height:15px;margin-bottom:10px;padding-left:15px}
+/* ?ÅÎã®?†Î∞∞??*/
+.adArea iframe{vertical-align:top}
+.adArea a{display:block;text-align:center}
+.adArea img{display:block;margin:0 auto;border:0}
+.adArea .linkContainer a.top_bnn_close{position:absolute;display:block;top:14px;left:50%;width:34px;height:34px;margin-left:530px;z-index:60;zoom:1;cursor:pointer}
+.adArea .linkContainer span.btn_bnn_close{overflow:hidden;display:block;width:35px;height:35px;background:url(//pics.gmarket.co.kr/pc/ko/net/corecom/common/layout/btn_banner_close.png) no-repeat 7px 8px;line-height:5000em}
+/* //?ÅÎã®?†Î∞∞??*/

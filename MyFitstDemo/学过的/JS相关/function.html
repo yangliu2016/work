@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function maxNum()
+        {
+            var x = document.getElementById('num1').value;
+            var y = document.getElementById('num2').value;
+            x=parseFloat(x);
+            y=parseFloat(y);
+
+            if(x>y)
+            {
+              alert('最大值为'+x);
+            }
+            else
+            {
+                alert('最大值为'+y);
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="num1">
+<input type="text" id="num2">
+<input type="button"  onclick="maxNum()" value="计算">
+</body>
+</html>

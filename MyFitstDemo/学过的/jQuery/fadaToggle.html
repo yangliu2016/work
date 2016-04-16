@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: #1dba9d;
+
+
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: red;
+
+
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            background: blue;
+
+
+        }
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $("#div1").fadeToggle();
+                $("#div2").fadeToggle("slow");
+                $("#div3").fadeToggle(1000);
+            });
+        });
+    </script>
+</head>
+<body>
+<button>三个div的切换</button>
+<br><br>
+<div id="div1"></div>
+<br/>
+<div id="div2"></div>
+<br/>
+<div id="div3"></div>
+</body>
+</head>
+<body>
+
+</body>
+</html>

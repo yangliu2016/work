@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>考试</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+        }
+        .heading{
+            width: 100%;
+            height: 152px;
+            background: #85d6ad;
+            position: relative;
+
+        }
+
+        .heading-title .image {
+            position: absolute;
+            left: 71px;
+            top: 63px;
+            border: 1px solid #CCCCCC;
+            height: 76px;
+        }
+        .heading-title .introduce{
+            position: absolute;
+            left:380px ;
+            top: 99px;
+            padding-bottom: 15px;
+            font-size: 18px;
+            font-family: 微软雅黑;
+            font-weight: bold;
+
+
+        }
+        .heading-title .btn{
+            position: absolute;
+            top:99px;
+            right: 20px;
+        }
+        @media screen and (max-width: 800px){
+            .heading-title .btn{
+                visibility: hidden;
+            }
+        }
+        .but{
+            width: 80px;
+            height: 30px;
+            background: aqua;
+            font-family: 微软雅黑;
+            color: #FFFFFF;
+            border: 0;
+        }
+        .sub{
+            width: 80px;
+            height: 30px;
+            background: #0000FF;
+            font-family: 微软雅黑;
+            color: #FFFFFF;
+            border: 0;
+        }
+        .bodying-left{
+            float: left;
+            margin-left: 71px;
+           margin-top: 49px;
+            margin-bottom: 40px;
+            margin-right: 66px;
+
+        }
+        .called{
+            height: 62px;
+        }
+        .called p{
+            font-size: 18px;
+            font-family: 微软雅黑;
+            margin-bottom: 28px;
+        }
+        .called input{
+            width: 384px;
+            height: 34px;
+            padding-left: 10px;
+            font-family: 微软雅黑;
+            font-size: 16px;
+
+        }
+        .site{
+            height: 62px;
+        }
+        .site p{
+            font-size: 18px;
+            font-family: 微软雅黑;
+            margin-top: 45px;
+            margin-bottom: 28px;
+        }
+        .site input{
+            width: 384px;
+            height: 34px;
+            padding-left: 10px;
+            font-family: 微软雅黑;
+            font-size: 16px;
+        }
+        .industry{
+            height: 62px;
+        }
+        .industry p{
+            font-size: 18px;
+            font-family: 微软雅黑;
+            margin-top: 45px;
+           margin-bottom: 28px;
+        }
+        .industry select{
+            width: 384px;
+            height: 34px;
+            padding-left: 10px;
+            font-family: 微软雅黑;
+            font-size: 16px;
+            color: #666666;
+        }
+        .describe p{
+            font-size: 18px;
+            font-family: 微软雅黑;
+            margin-top: 45px;
+            margin-bottom: 28px;
+        }
+        .describe textarea {
+            width: 384px;
+            height: 137px;
+        }
+        .nav{
+            margin-top: 20px;
+        }
+        .nav ul{
+            list-style:none;
+        }
+        .nav li{
+            display: inline;
+        }
+        .nav a{
+            text-decoration: none;
+            color: #333333;
+            font-size: 18px;
+            font-family: 微软雅黑;
+        }
+        a:hover{
+            background: #0000FF;
+            color: #FFFFFF;
+        }
+        .nav-img{
+            margin-top: 28px;
+        }
+
+        .nav-img li{
+            display: inline;
+        }
+        .nav-img img{
+            width: 50px;
+            height: 50px;
+        }
+        .bodying-right{
+            float: right;
+            margin-top: 49px;
+            margin-right: 40px;
+            margin-left: 66px;
+        }
+        h4{
+            color:#666666;
+            font-family: 微软雅黑;
+            font-size: 18px;
+            text-indent: 20px;
+            margin-bottom: 10px;
+        }
+        .content{
+            width: 700px;
+            height: 500px;
+            border: 1px solid #CCCCCC;
+            position: relative;
+        }
+        .content img{
+            width: 70px;
+            height: 60px;
+            position: absolute;
+            left: 40px;
+            top: 20px;
+        }
+        .content .qw p{
+            padding-top: 20px;
+            font-size: 16px;
+            font-family: 微软雅黑;
+            font-weight: bold;
+            color: #666666;
+            padding-left:130px;
+        }
+        .bd{
+            margin-top: 40px;
+            margin-left: 40px;
+            margin-bottom: 20px;
+        }
+        .xy p{
+            font-size: 18px;
+            font-family: 微软雅黑;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #666666;
+        }
+        .xy input{
+            width: 384px;
+            height: 34px;
+            padding-left: 10px;
+        }
+        .fr p{
+             font-size: 18px;
+             font-family: 微软雅黑;
+             margin-top: 20px;
+             margin-bottom: 10px;
+            color: #666666;
+         }
+        .fr input{
+            width: 384px;
+            height: 34px;
+            padding-left: 10px;
+        }
+        .dh p{
+            font-size: 18px;
+            font-family: 微软雅黑;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .dh input{
+            width: 384px;
+            height: 34px;
+            padding-left: 10px;
+            font-family: 微软雅黑;
+            font-size: 16px;
+        }
+        .lxr p{
+            font-size: 18px;
+            font-family: 微软雅黑;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .lxr input{
+            width: 384px;
+            height: 34px;
+            padding-left: 10px;
+            font-family: 微软雅黑;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="heading">
+    <div class="heading-title">
+        <img src="logo_50.png" class="image">
+        <div class="introduce" >深圳一粒云科技有限公司</div>
+        <div class="btn">
+            <input type="button" value="预览" class="but">
+            <input type="submit" value="保存" class="sub">
+        </div>
+    </div>
+</div>
+<div class="bodying">
+    <div class="bodying-left">
+        <div class="called">
+            <p>企业简称</p>
+            <input type="text" placeholder="一粒云">
+        </div>
+        <div class="site">
+            <p>地址</p>
+            <input type="text" placeholder="中国-深圳">
+        </div>
+        <div class="industry">
+            <p>所属行业</p>
+            <select>
+                <option value="1">通信 邮政 计算机 网络</option>
+                <option value="2">云计划 存储 计算机 网络</option>
+                <option value="3">一粒云 科技 计算机 网络</option>
+            </select>
+        </div>
+        <div class="describe">
+            <p>公司描述</p>
+            <textarea></textarea>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#">公司风采</a></li>
+                <li><a href="#">上传照片</a></li>
+                <li><a href="#">不超过3张</a></li>
+            </ul>
+        </div>
+        <div class="nav-img">
+            <ul>
+                <li><img src="2.jpg" ></li>
+                <li><img src="2.jpg" ></li>
+                <li><img src="2.jpg" ></li>
+                <li><img src="2.jpg" ></li>
+                <li><img src="2.jpg" ></li>
+            </ul>
+
+        </div>
+
+    </div>
+    <div class="bodying-right">
+        <h4>企业真实性</h4>
+        <div class="content">
+            <div class="content-img">
+            <img src="2.jpg">
+            <div class="qw">
+                <P>请务确保您填写的信息与国家公示平台的一致，以方<br>便我们快速查询并通过验证</P>
+            </div>
+            </div>
+            <div class="bd">
+                <div class="xy">
+                    <p>15位营业执号码或者18位信用代码</p>
+                    <input type="text">
+                </div>
+                <div class="fr">
+                    <p>法人代表</p>
+                    <input type="text">
+                </div>
+                <div class="dh">
+                    <p>电话</p>
+                    <input type="text" placeholder="18688939187">
+                </div>
+                <div class="lxr">
+                    <p>联系人</p>
+                    <input type="text" placeholder="肖敏">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

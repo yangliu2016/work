@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<h2>我的笔记</h2>
+<textarea ng-model="message" cols="40" rows="10"></textarea>
+<p>
+    <button ng-click="save()">保存</button>
+    <button ng-click="clear()">清除</button>
+</p>
+<P>剩余字数：<span ng-bind="left()"></span></P>
+<script src="angular/angular.js"></script>
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller("myCtrl", function($scope) {
+        $scope.message = "";
+        $scope.left  = function() {return 100 - $scope.message.length;};
+        $scope.clear = function() {$scope.message = "";};
+        $scope.save  = function() {alert("Note Saved");};
+    });
+</script>
+</body>
+</html>
